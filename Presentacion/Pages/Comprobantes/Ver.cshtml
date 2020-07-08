@@ -1,0 +1,214 @@
+﻿@page
+@{
+    ViewData["Title"] = "Ver Comprobante";
+}
+<div class="row">
+    <div class="col-md-12">
+        <div class="white-box">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label class="control-label">Comprobante</label>
+                        <input type="text" id="txtTipoDocumento" class="form-control" disabled />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label">Cliente</label>
+                        <input type="text" id="txtNombreCliente" class="form-control" disabled />
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label class="control-label"><span id="spIdentidad">RUC</span></label>
+                        <input type="text" id="txtRuc" class="form-control" disabled>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label class="control-label">Fecha Emisión</label>
+                        <div class="input-group">
+                            <input type="text" id="txtFecha" class="form-control" disabled>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2" id="divTxtEstado">
+                    <div class="form-group">
+                        <label class="control-label">Estado</label>
+                        <input type="text" id="txtEstado" class="form-control" disabled>
+                    </div>
+                </div>
+                <div class="col-md-2" id="divComboEstados" hidden>
+                    <div class="form-group">
+                        <label class="control-label">Estado</label>
+                        <select id="ddlEstados" class="form-control select2"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label class="control-label">Serie</label>
+                        <input type="text" id="txtSerie" class="form-control" disabled>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label class="control-label">Email</label>
+                        <input type="text" id="txtEmail" class="form-control" placeholder="Email" disabled>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label class="control-label">Dirección</label>
+                        <input type="text" id="txtDireccion" class="form-control" placeholder="Dirección" disabled>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group ultimaFila">
+                        <label class="control-label">Fecha Vencimiento</label>
+                        <div class="input-group">
+                            <input type="text" id="txtFechaVencimiento" class="form-control" placeholder="Fecha" disabled>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label class="control-label">Moneda</label>
+                        <input type="text" id="txtMoneda" class="form-control" disabled>
+                    </div>
+                </div>
+                <div class="col-md-2 divTipoCambio" hidden>
+                    <div class="form-group">
+                        <label class="control-label">Tipo de Cambio</label>
+                        <input type="text" id="txtTipoCambio" class="form-control" disabled>
+                    </div>
+                </div>
+                <div class="col-md-2" id="divTipoOperacion">
+                    <div class="form-group">
+                        <label class="control-label">Tipo Operación</label>
+                        <input type="text" id="txtTipoOperacion" class="form-control" disabled>
+                    </div>
+                </div>
+                <div class="col-md-4" id="divDetraccion">
+                    <div class="form-group">
+                        <label class="control-label">Bienes y Servicios sujetos a detracción</label>
+                        <input type="text" id="txtDetraccion" class="form-control" disabled>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label class="control-label">Nro OC</label>
+                        <input type="text" id="txtNroOC" class="form-control" placeholder="Nro OC" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group ultimaFila">
+                        <label>Medio de Pago</label>
+                        <input type="text" id="txtMedioPago" class="form-control" placeholder="Medio Pago" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="well" id="divReferencia" style="background-color:#edf1f5;" hidden>
+                <div class="row">
+                    <div class="col-md-4 col-sm4">
+                        <div class="form-group">
+                            <label class="control-label">Tipo Nota</label>
+                            <input type="text" id="txtTipoNota" class="form-control" placeholder="Tipo Nota" disabled>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label class="control-label">Serie Ref.</label>
+                            <input type="text" id="txtSerieRef" class="form-control" placeholder="Serie Referencia" disabled>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label class="control-label">Correlativo Ref.</label>
+                            <input type="text" id="txtCorrelativoRef" class="form-control" placeholder="Correlativo Ref." disabled>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="well" id="divAnulacion" hidden>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Motivo Anulación <span id="spMotivoAnulacionRequerido">(*)</span> </label>
+                            <input id="txtMotivoAnulacion" autocomplete="off" name="MotiAnulacion" class="form-control" placeholder="Motivo Anulación" value="" type="text">
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label>Fecha Anulación <span id="spFechaAnulacionRequerido">(*)</span> </label>
+                            <div class="input-group">
+                                <input id="txtFechaAnulacion" name="FechaAnulacion" type="text" class="form-control mydatepicker" placeholder="Fecha de Anulación" /><span class="input-group-addon"><i class="icon-calender"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--  20100538203;20;R001;00000001;2017-01-18;anulado -->
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <br>
+                            <!-- <button id ="btnAnulacion" type="button" class="btn btn-info submit-ajax-button" data-id="<?php echo $comprobante->id; ?>" >Anular</button>-->
+                            <button id="btnAnulacion" type="button" class="btn btn-info">Anular</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="white-box" id="divGrilla">
+            <div class="table-responsive">
+                <table id="grilla" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th style="width:60%">Item</th>
+                            <th>Cantidad</th>
+                            <th>UND</th>
+                            <th class="caberceraPU">P.U(<span class="spMoneda">S/</span>)</th>
+                            <th class="cabeceraPT">P.T(<span class="spMoneda">S/</span>)</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr id="trGlosa" hidden>
+                            <td colspan="5">
+                                <div class="form-group">
+                                    <label>Glosa</label>
+                                    <textarea name="Glosa" id="txtGlosa" rows="2" class="form-control" disabled></textarea>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr id="trSubTotal">
+                            <th colspan="4" style="text-align:right">Sub Total (<span class="spMoneda">S/</span>):</th>
+                            <th><input type="text" id="txtSubTotal" class="form-control" placeholder="Sub Total" disabled></th>
+                        </tr>
+                        <tr id="trIva">
+                            <th colspan="4" style="text-align:right">
+                                IGV (%):
+                                <input type="text" id="txtIva" style="width:54px;margin-left:10px;" class="form-control text-right input-sm required price pull-right" width="50" placeholder="IGV" disabled>
+                            </th>
+                            <th><input type="text" id="txtIvaSubTotal" class="form-control" placeholder="Sub Total" disabled></th>
+                        </tr>
+                        <tr>
+                            <th colspan="4" style="text-align:right">Total (<span class="spMoneda">S/</span>):</th>
+                            <th><input type="text" id="txtTotal" class="form-control" placeholder="Total" disabled></th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script src="~/js/Comprobantes/Ver.js"></script>
+}

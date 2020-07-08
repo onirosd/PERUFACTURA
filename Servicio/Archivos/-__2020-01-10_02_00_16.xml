@@ -1,0 +1,19 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dbn="http://www.dbnet.cl">
+  <soapenv:Header />
+  <soapenv:Body>
+    <dbn:getDocumentoPDF>
+      <!--Optional:-->
+      <dbn:_ruttEmpr>10740853657</dbn:_ruttEmpr>
+      <!--Optional:-->
+      <dbn:_folioDTE>63</dbn:_folioDTE>
+      <!--Optional:-->
+      <dbn:_tipoDTE>1</dbn:_tipoDTE>
+      <!--Optional:-->
+      <dbn:_serieInte>FE01</dbn:_serieInte>
+      <!--Optional:-->
+      <dbn:_fechaDTE>2020-01-07</dbn:_fechaDTE>
+      <!--Optional:-->
+      <dbn:_monTotal>3.3600</dbn:_monTotal>
+    </dbn:getDocumentoPDF>
+  </soapenv:Body>
+</soapenv:Envelope>

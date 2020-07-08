@@ -1,0 +1,96 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Página de inicio";
+}
+
+<div class="row">
+    <div class="col-md-12 col-lg-2">
+        <div class="white-box indicadores">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h5 class="text-muted m-t-0">Vendido Hoy</h5>
+                    <h2 class="m-b-0 font-medium text-right" id="divVendido"></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 col-lg-2">
+        <div class="white-box indicadores">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h5 class="text-muted m-t-0">Ganado Hoy</h5>
+                    <h2 class="m-b-0 font-medium text-right" id="divGanado"></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 col-lg-2">
+        <div class="white-box indicadores">
+            <div class="row">
+                <div class="col-sm-12 p-l-0">
+                    <h5 class="text-muted m-t-0">Comprobantes Hoy</h5>
+                    <h2 class="m-b-0 font-medium text-right" id="divComprobantes"></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 col-lg-2">
+        <div class="white-box indicadores">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h5 class="text-muted m-t-0">Clientes</h5>
+                    <h2 class="m-b-0 font-medium text-right" id="divClientes"></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 col-lg-2">
+        <div class="white-box indicadores">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h5 class="text-muted m-t-0">Productos</h5>
+                    <h2 class="m-b-0 font-medium text-right" id="divProductos"></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 col-lg-2">
+        <div class="white-box indicadores">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h5 class="text-muted m-t-0">Servicios</h5>
+                    <h2 class="m-b-0 font-medium text-right" id="divServicios"></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="white-box" id="divGrilla">
+            <h3 class="box-title">Productos que se están quedando sin Stock</h3>
+            <div class="table-responsive">
+                <table id="grilla" class="table color-bordered-table inverse-bordered-table m-t-0">
+                    <thead >
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombre Producto</th>
+                            <th>Stock</th>
+                            <th>UDM</th>
+                            <th>Abastecer</th>
+                        </tr>
+                    </thead>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<partial name="~/Pages/Productos/_Abastecer.cshtml" />
+@section Scripts {
+    <script src="~/js/Inicio/inicio.js"></script>
+}
+
+
+

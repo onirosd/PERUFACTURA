@@ -1,0 +1,113 @@
+﻿@page
+@{
+    ViewData["Title"] = "Comprobantes";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="white-box">
+            
+                <div class="row">
+                    <div class="col-md-1">
+                        <div class="form-group">
+                            <label class="control-label">Serie</label>
+                            <input type="text" id="txtBuscarSerie" class="form-control input-sm" placeholder="Serie">
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label class="control-label">Cliente</label>
+                            <input type="text" id="txtBuscarCliente" class="form-control input-sm" placeholder="Cliente">
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <div class="form-group">
+                            <label class="control-label">Usuario</label>
+                            <input type="text" id="txtBuscarUsuario" class="form-control input-sm" placeholder="Usuario">
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label class="control-label">Tipo</label>
+                            <select class="form-control input-sm" id="cboBuscarTipo">
+                                <option value="0">Todos</option>
+                                <option value="3">Boleta</option>
+                                <option value="1">Factura</option>
+                                <option value="7">Nota de Crédito</option>
+                                <option value="8">Nota de Débito</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label class="control-label">Emitido</label>
+                            <div class="input-group">
+                                <input type="text" id="txtBuscarEmitido" class="form-control input-daterange-datepicker input-sm" placeholder="Fecha"> <span class="input-group-addon"><i class="icon-calender"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label class="control-label">Estado</label>
+                            <select class="form-control input-sm" id="cboBuscarEstado">
+                                <option value="0">Todos</option>
+                                <option value="3">Aprobado SUNAT</option>
+                                <option value="5">Enviado Anular a SUNAT</option>
+                                <option value="2">Enviado a SUNAT</option>
+                                <option value="1">Pendiente</option>
+                                <option value="4">Rechazado SUNAT</option>
+                                <option value="6">Anulado SUNAT</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label></label>
+                            <div class="input-group m-t-5">
+                                <button class="btn btn-info btn-sm" id="btnBuscar">
+                                    <i class="fa fa-search"></i>
+                                    <span>Buscar</span>
+                                </button>
+                                <button class="btn btn-danger m-l-10 btn-sm" id="btnNuevo">
+                                    <i class="fa fa-file-o"></i>
+                                    <span>Nuevo</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="white-box" id="divGrilla">
+            <div class="table-responsive">
+                <table id="grilla" class="table color-bordered-table inverse-bordered-table">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Serie</th>
+                            <th>Cliente</th>
+                            <th>Usuario</th>
+                            <th>Tipo</th>
+                            <th>Emitido</th>
+                            <th>Estado</th>
+                            <th>Total</th>
+                            <th>Estado Id</th>
+                            <th>ClienteId</th>
+                            <th>Ver PDF</th>
+                            <th>Ver XML</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/Comprobantes/Comprobantes.js"></script>
+}
+

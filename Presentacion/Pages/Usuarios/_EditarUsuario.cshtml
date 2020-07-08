@@ -1,0 +1,57 @@
+﻿<div id="modalUsuario" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="titulo">Usuario</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group" id="divMensajeError">
+                    <div class="alert alert-danger alert-dismissable col-sm-12">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <span id="spanMensajeError"></span>
+                    </div>
+                </div>
+                <form class="form-horizontal" onsubmit="return false;">
+
+                    <div class="form-group">
+                        <label for="cboTipousuarioEdit" class="col-sm-4 control-label">Tipo de usuario (*)</label>
+                        <div class="col-sm-8">
+                            <select id="cboTipousuarioEdit" class="form-control"></select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtNombreEdit" class="col-sm-4 control-label">Nombre (*)</label>
+                        <div class="col-sm-8">
+                            <input type="text" id="txtNombreEdit" class="form-control" placeholder="Ingrese el Nombre y Apellido" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtUsuarioEdit" class="col-sm-4 control-label">Usuario (*)</label>
+                        <div class="col-sm-8">
+                            <input type="text" id="txtUsuarioEdit" class="form-control" placeholder="Usuario de Acceso" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtContrasenaEdit" class="col-sm-4 control-label">Contraseña <span id="spnContrasena">(*)</span></label>
+                        <div class="col-sm-8">
+                            <input type="password" id="txtContrasenaEdit" class="form-control" placeholder="Contraseña de ingreso" />
+                            <small id="helperContrasena" class="form-text text-muted">Si desea actualizar la contraseña ingrese una nueva</small>
+                        </div>
+                    </div>
+                    <div class="form-group" id="divConfirmaContrasena">
+                        <label for="txtConfirmarContrasenaEdit" class="col-sm-4 control-label">Confirmar Contraseña <span id="spnConfirmarContrasena">(*)</span></label>
+                        <div class="col-sm-8">
+                            <input type="password" id="txtConfirmarContrasenaEdit" class="form-control" placeholder="Confirmar contraseña de ingreso" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btnCancelarUsuario" class="btn btn-default waves-effect" data-dismiss="modal">Cerrar</button>
+                <button type="button" id="btnGuardarUsuario" class="btn btn-success waves-effect waves-light">
+                    <i class="fa fa-check"></i>Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>

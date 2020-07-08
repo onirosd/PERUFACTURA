@@ -1,0 +1,27 @@
+﻿<div id="myModalTipoComprobante" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mymodal" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Seleccione Tipo de Comprobante</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" id="formularioTipoComprobante" onsubmit="return false;">
+                    <div class="form-group form-group-sm ultimaFila">
+                        <label for="ddlTipoComprobanteSelect" class="control-label col-sm-4">Tipo Comprobante (*):</label>
+                        <div class="col-sm-8">
+                            <select class="form-control" id="ddlTipoComprobanteSelect">
+                                <option value="1">Factura</option>
+                                <option value="3">Boleta</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-success waves-effect waves-light" id="btnTipoComprobanteSelect">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>

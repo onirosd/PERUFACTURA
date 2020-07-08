@@ -1,0 +1,127 @@
+﻿<div id="myModalEditCliente" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="longmodal" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Cliente</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" id="formularioCliente" onsubmit="return false;">
+                    <div class="form-group form-group-sm ultimaFila">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="ddlTipoDocumentoEdit" class="control-label col-sm-4">Tipo Documento (*):</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control" id="ddlTipoDocumentoClienteEdit">
+                                        <option value="6">RUC</option>
+                                        <option value="1">DNI</option>
+                                        <option value="4">Carnet de extranjería</option>
+                                        <option value="7">Pasaporte</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="txtNroDocumentoEdit" class="control-label col-sm-4">Nro Documento:</label>
+                                <div class="input-group-sm col-sm-8">
+                                    <input type="text" class="form-control" id="txtNroDocumentoEdit" maxlength="11">
+                                    <span class="input-group-btn">
+                                        <button type="button" id="btnBuscarClienteEdit" class="btn waves-effect waves-light btn-primary"><i class="fa fa-search"></i></button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" col-sm-12">
+                            <div class="form-group">
+                                <label for="txtNombreClienteEdit" class="control-label col-sm-2">Nombre (*):</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="txtNombreClienteEdit">
+                                    <small class="form-text text-muted">Puede consultar los datos con la SUNAT haciendo click en <a target="_blank" href="http://www.sunat.gob.pe/cl-ti-itmrconsruc/jcrS00Alias">SUNAT CONSULTAS EN LINEA</a>.</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="txtDireccionClienteEdit" class="control-label col-sm-4">Dirección (*):</label>
+                                <div class="col-sm-8">
+                                    <input type="text" id="txtDireccionClienteEdit" class="form-control" placeholder="Dirección" maxlength="99" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="txtTelefonoPrincipalClienteEdit" class="control-label col-sm-4">Teléfono Principal:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="txtTelefonoPrincipalClienteEdit" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="txtTelefonoAdicionalClienteEdit" class="control-label col-sm-4">Teléfono Adicional:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="txtTelefonoAdicionalClienteEdit">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="txtCorreoPrincipalClienteEdit" class="control-label col-sm-4">Correo Principal (*):</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="txtCorreoPrincipalClienteEdit">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="txtCorreoAdicional1ClienteEdit" class="control-label col-sm-4">Correo 1 Add:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="txtCorreoAdicional1ClienteEdit">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="txtCorreoAdicional2ClienteEdit" class="control-label col-sm-4">Correo 2 Add:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="txtCorreoAdicional2ClienteEdit">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="txtCorreoAdicional3ClienteEdit" class="control-label col-sm-4">Correo 3 Add:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="txtCorreoAdicional3ClienteEdit">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="txtCorreoAdicional4ClienteEdit" class="control-label col-sm-4">Correo 4 Add:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="txtCorreoAdicional4ClienteEdit">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group ultimaFila">
+                                <label for="txtCorreoAdicional5ClienteEdit" class="control-label col-sm-4">Correo 5 Add:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="txtCorreoAdicional5ClienteEdit">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-success waves-effect waves-light" id="btnEditCliente"><i class="fa fa-check"></i>Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>

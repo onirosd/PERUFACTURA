@@ -1,0 +1,121 @@
+﻿@page
+@{
+    ViewData["Title"] = "Ver Proforma";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="white-box p-b-0">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">Cliente</label>
+                        <input type="text" id="txtCliente" class="form-control" placeholder="Cliente" disabled>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label class="control-label">RUC</label>
+                        <input type="text" id="txtRuc" class="form-control" placeholder="RUC" disabled>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label class="control-label">Fecha</label>
+                        <div class="input-group">
+                            <input type="text" id="txtFecha" class="form-control" placeholder="Fecha" disabled>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2" id="divTxtEstado">
+                    <div class="form-group">
+                        <label class="control-label">Estado</label>
+                        <input type="text" id="txtEstado" class="form-control" placeholder="Estado" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">Email</label>
+                        <input type="text" id="txtEmail" class="form-control" placeholder="Email" disabled>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">Dirección</label>
+                        <input type="text" id="txtDireccion" class="form-control" placeholder="Dirección" disabled>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label class="control-label">Moneda</label>
+                        <input type="text" id="txtMoneda" class="form-control" disabled>
+                    </div>
+                </div>
+                <div class="col-md-3" id="divBtnCerrarProforma">
+                    <div class="form-group">
+                        <label></label>
+                        <div class="input-group m-t-5">
+                            <button class="btn btn-danger" id="btnCerrarProforma" data-toggle="modal" data-target="#myModalTipoComprobante">
+                                <i class="fa fa-times"></i>
+                                <span>Cerrar</span>
+                            </button>
+                            <button class="btn btn-danger m-l-5" id="btnEditarProforma">
+                                <i class="fa fa-times"></i>
+                                <span>Editar</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2" id="divBtnImprimirProforma" hidden>
+                    <div class="form-group">
+                        <label></label>
+                        <div class="input-group m-t-5">
+                            <button class="btn btn-danger" id="btnImprimirProforma" data-toggle="modal" data-target="#myModalImpresion">
+                                <i class="fa fa-print"></i>
+                                <span>Imprimir</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="white-box" id="divGrilla">
+            <div class="table-responsive">
+                <table id="grilla" class="table color-bordered-table inverse-bordered-table m-0">
+                    <thead>
+                        <tr>
+                            <th style="width:60%">Item</th>
+                            <th>Cantidad</th>
+                            <th>UND</th>
+                            <th class="caberceraPU">P.U</th>
+                            <th class="cabeceraPT">P.T</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th colspan="4" style="text-align:right">Total:</th>
+                            <th><input type="text" id="txtTotal" class="form-control" placeholder="Total" disabled></th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<partial name="../Impresion/_impresion.cshtml" />
+<partial name="TipoComprobante.cshtml" />
+@section Scripts {
+    <script src="~/js/Proforma/Ver.js"></script>
+    <script src="~/js/Impresion/Impresion.js"></script>
+    <script src="~/plugin/jquery-ui-1.9.2.custom.js"></script>
+}
+

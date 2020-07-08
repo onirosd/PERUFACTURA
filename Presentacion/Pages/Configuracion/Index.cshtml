@@ -1,0 +1,57 @@
+﻿@page
+@{
+    ViewData["Title"] = "Mantenimiento / Configuración";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="white-box" id="divBloquearForm">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Empresa (*)</label>
+                    <div class="col-sm-10">
+                        <input type="text" id="txtEmpresa" class="form-control" placeholder="Empresa" disabled>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">RUC (*)</label>
+                    <div class="col-sm-10">
+                        <input type="text" id="txtRuc" class="form-control" placeholder="RUC" disabled>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">IGV (*)</label>
+                    <div class="col-sm-10">
+                        <input type="text" id="txtIGV" class="form-control" placeholder="IGV" disabled>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Moneda Actual (*)</label>
+                    <div class="col-sm-10">
+                        <input type="text" id="txtMonedaActual" class="form-control" placeholder="Moneda Actual" disabled>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Dirección (*)</label>
+                    <div class="col-sm-10">
+                        <textarea id="txtDireccion" class="form-control" placeholder="Dirección" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">CTA Detracción (*)</label>
+                    <div class="col-sm-10">
+                        <textarea id="txtCTADetraccion" class="form-control" placeholder="CTA Detracción"></textarea>
+                    </div>
+                </div>
+                <div class="form-group m-b-0">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="button" id="btnGuardarConfig" class="btn btn-success waves-effect waves-light m-t-10">Guardar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script src="~/js/Configuracion/Configuracion.js"></script>
+}

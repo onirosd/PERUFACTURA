@@ -1,0 +1,44 @@
+﻿<div id="modalAjustarStock" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="titulo">Ajustar Stock</h4>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-custom input-sm">(*) Campos obligatorios</div>
+                <div class="alert alert-warning text-center"><b>TENGA CUIDADO</b> con usar esta opción, solo se debe usarse si el <b>STOCK</b> no cuadra con el <u>inventario real</u>.</div>
+                <form class="form-horizontal" onsubmit="return false;">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Producto (*)</label>
+                        <div class="col-sm-8">
+                            <select id="cboProductoAS" class="form-control select2"></select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Cantidad (*)</label>
+                        <div class="col-sm-8">
+                            <input type="number" id="txtCantidadAS" class="form-control" placeholder="Cantidad">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">UDM</label>
+                        <div class="col-sm-8">
+                            <input type="text" id="txtUDMAS" class="form-control" placeholder="UDM" disabled>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Stock Actual</label>
+                        <div class="col-sm-8">
+                            <input type="text" id="txtStockActualAS" class="form-control" placeholder="Stock Actual" disabled>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btnCancelarAjustarStock" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
+                <button type="button" id="btnGuardarAjustarStock" class="btn btn-success waves-effect waves-light"><i class="fa fa-check"></i>Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>

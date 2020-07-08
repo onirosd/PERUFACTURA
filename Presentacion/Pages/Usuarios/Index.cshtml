@@ -1,0 +1,67 @@
+﻿@page
+@{
+    ViewData["Title"] = "Mantenimiento / Usuarios";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="white-box">
+            <form class="form-body" onsubmit="return false;">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group ultimaFila">
+                            <label class="control-label">Nombre</label>
+                            <input type="text" id="txtBuscarNombre" class="form-control" placeholder="Nombre">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group ultimaFila">
+                            <label class="control-label">Usuario</label>
+                            <input type="text" id="txtBuscarUsuario" class="form-control" placeholder="Usuario">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group ultimaFila">
+                            <label></label>
+                            <div class="input-group m-t-5">
+                                <button class="btn btn-info" id="btnBuscar">
+                                    <i class="fa fa-search"></i>
+                                    <span>Buscar</span>
+                                </button>
+                                <button class="btn btn-danger m-l-10" id="btnNuevo" data-toggle="modal" data-target="#modalUsuario">
+                                    <i class="fa fa-file-o"></i>
+                                    <span>Nuevo</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="white-box" id="divGrilla">
+            <div class="table-responsive">
+                <table id="grilla" class="table color-bordered-table inverse-bordered-table">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombre</th>
+                            <th>Usuario</th>
+                            <th>Rol</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<partial name="~/Pages/Usuarios/_EditarUsuario.cshtml" />
+
+@section Scripts {
+<script src="~/js/Usuarios/Usuario.js"></script>
+}

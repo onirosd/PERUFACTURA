@@ -1,0 +1,145 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dbn="http://www.dbnet.cl">
+  <soapenv:Header />
+  <soapenv:Body>
+    <dbn:putCustomerETDLoad>
+      <!--Optional:-->
+      <dbn:Extras>
+        <!--Optional:-->
+        <dbn:EnvioPdf>
+          <!--Zero or more repetitions:-->
+          <dbn:EnvioPdf>
+            <!--Optional:-->
+            <dbn:CamposEnvioPdf>
+              <!--Optional:-->
+              <dbn:MailEnvi>hector.lavoe@gmai.com</dbn:MailEnvi>
+            </dbn:CamposEnvioPdf>
+          </dbn:EnvioPdf>
+        </dbn:EnvioPdf>
+      </dbn:Extras>
+      <!--Optional:-->
+      <dbn:Encabezado>
+        <!--Optional:-->
+        <dbn:camposEncabezado>
+          <!--Optional:-->
+          <dbn:TipoDTE>3</dbn:TipoDTE>
+          <!--Optional:-->
+          <dbn:RUTEmis>23456789012</dbn:RUTEmis>
+          <!--Optional:-->
+          <dbn:Serie>BE01</dbn:Serie>
+          <!--Optional:-->
+          <dbn:Correlativo>13</dbn:Correlativo>
+          <!--Optional:-->
+          <dbn:RznSocEmis><![CDATA[Hector Lavoe]]></dbn:RznSocEmis>
+          <!--Optional:-->
+          <dbn:DirEmis><![CDATA[av del aire 123]]></dbn:DirEmis>
+          <!--Optional:-->
+          <dbn:CodiComu>150141</dbn:CodiComu>
+          <!--Optional:-->
+          <dbn:NomComer><![CDATA[Hector Lavoe]]></dbn:NomComer>
+          <!--Optional:-->
+          <dbn:RUTRecep>15478542</dbn:RUTRecep>
+          <!--Optional:-->
+          <dbn:TipoRutReceptor>1</dbn:TipoRutReceptor>
+          <!--Optional:-->
+          <dbn:RznSocRecep><![CDATA[Hector Lavoe]]></dbn:RznSocRecep>
+          <!--Optional:-->
+          <dbn:DirRecep><![CDATA[av del aire 123]]></dbn:DirRecep>
+          <!--Optional:-->
+          <dbn:TipoMoneda>PEN</dbn:TipoMoneda>
+          <!--Optional:-->
+          <dbn:MntNeto>10.17</dbn:MntNeto>
+          <!--Optional:-->
+          <dbn:MntExe>0.00</dbn:MntExe>
+          <!--Optional:-->
+          <dbn:MntExo>0.00</dbn:MntExo>
+          <!--Optional:-->
+          <dbn:MntTotalIgv>1.83</dbn:MntTotalIgv>
+          <!--Optional:-->
+          <dbn:MntTotal>12</dbn:MntTotal>
+          <!--Optional:-->
+          <dbn:FchEmis>2019-12-14</dbn:FchEmis>
+          <!--Optional:-->
+          <dbn:FechVencFact>2020-01-14</dbn:FechVencFact>
+          <!--Optional:-->
+          <dbn:Sustento>
+          </dbn:Sustento>
+          <!--Optional:-->
+          <dbn:TipoNotaCredito>
+          </dbn:TipoNotaCredito>
+          <!--Optional:-->
+          <dbn:CodigoLocalAnexo>0000</dbn:CodigoLocalAnexo>
+          <dbn:HoraEmision>01:52:10</dbn:HoraEmision>
+        </dbn:camposEncabezado>
+        <!--Optional:-->
+        <dbn:ImptoReten>
+          <!--Zero or more repetitions:-->
+          <dbn:ImptoReten>
+            <!--Optional:-->
+            <dbn:CodigoImpuesto>1000</dbn:CodigoImpuesto>
+            <!--Optional:-->
+            <dbn:TasaImpuesto>18</dbn:TasaImpuesto>
+            <!--Optional:-->
+            <dbn:MontoImpuesto>1.83</dbn:MontoImpuesto>
+          </dbn:ImptoReten>
+        </dbn:ImptoReten>
+      </dbn:Encabezado>
+      <!--Optional:-->
+      <dbn:Detalles>
+        <!--Zero or more repetitions:-->
+        <dbn:Detalle>
+          <!--Optional:-->
+          <dbn:Detalles>
+            <!--PRODUCTO 1:-->
+            <dbn:NroLinDet>1</dbn:NroLinDet>
+            <!--Optional:-->
+            <dbn:QtyItem>1</dbn:QtyItem>
+            <!--Optional:-->
+            <dbn:UnmdItem>NIU</dbn:UnmdItem>
+            <!--Optional:-->
+            <dbn:VlrCodigo>1039</dbn:VlrCodigo>
+            <!--Optional:-->
+            <dbn:NmbItem><![CDATA[[tornillito] - tornillos]]></dbn:NmbItem>
+            <!--Optional:-->
+            <dbn:PrcItem>12</dbn:PrcItem>
+            <!--Optional:-->
+            <dbn:PrcItemSinIgv>10.16949152542373</dbn:PrcItemSinIgv>
+            <!--Optional:-->
+            <dbn:MontoItem>10.16949152542373</dbn:MontoItem>
+            <!--Optional:-->
+            <dbn:IndExe>10</dbn:IndExe>
+            <!--Optional:-->
+            <dbn:CodigoTipoIgv>1000</dbn:CodigoTipoIgv>
+            <!--Optional:-->
+            <dbn:TasaIgv>18</dbn:TasaIgv>
+            <!--Optional:-->
+            <dbn:ImpuestoIgv>1.8305084745762699</dbn:ImpuestoIgv>
+          </dbn:Detalles>
+        </dbn:Detalle>
+      </dbn:Detalles>
+      <!--Optional:-->
+      <dbn:DescuentosRecargosyOtros>
+        <dbn:DatosAdicionales>
+          <dbn:DatosAdicionales>
+            <dbn:TipoAdicSunat>01</dbn:TipoAdicSunat>
+            <dbn:NmrLineasAdicSunat>2</dbn:NmrLineasAdicSunat>
+            <dbn:DescripcionAdicsunat><![CDATA[glosa]]>.</dbn:DescripcionAdicsunat>
+          </dbn:DatosAdicionales>
+        </dbn:DatosAdicionales>
+        <!--Optional:-->
+        <dbn:Referencias>
+          <!--Zero or more repetitions:-->
+          <dbn:Referencias>
+            <!--Optional:-->
+            <dbn:NroLinRef>1</dbn:NroLinRef>
+            <!--Optional:-->
+            <dbn:TpoDocRef>801</dbn:TpoDocRef>
+            <!--Optional:-->
+            <dbn:SerieRef>-</dbn:SerieRef>
+            <!--Optional:-->
+            <dbn:FolioRef>123456</dbn:FolioRef>
+          </dbn:Referencias>
+        </dbn:Referencias>
+      </dbn:DescuentosRecargosyOtros>
+    </dbn:putCustomerETDLoad>
+  </soapenv:Body>
+</soapenv:Envelope>

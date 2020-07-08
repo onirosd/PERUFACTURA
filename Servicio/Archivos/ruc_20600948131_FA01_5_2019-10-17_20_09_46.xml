@@ -1,0 +1,131 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dbn="http://www.dbnet.cl">
+  <soapenv:Header />
+  <soapenv:Body>
+    <dbn:putCustomerETDLoad>
+      <!--Optional:-->
+      <dbn:Extras>
+        <!--Optional:-->
+        <dbn:EnvioPdf>
+          <!--Zero or more repetitions:-->
+          <dbn:EnvioPdf>
+            <!--Optional:-->
+            <dbn:CamposEnvioPdf>
+              <!--Optional:-->
+              <dbn:MailEnvi>continentes_5@hotmail.com</dbn:MailEnvi>
+            </dbn:CamposEnvioPdf>
+          </dbn:EnvioPdf>
+        </dbn:EnvioPdf>
+      </dbn:Extras>
+      <!--Optional:-->
+      <dbn:Encabezado>
+        <!--Optional:-->
+        <dbn:camposEncabezado>
+          <!--Optional:-->
+          <dbn:TipoDTE>1</dbn:TipoDTE>
+          <!--Optional:-->
+          <dbn:RUTEmis>20600948131</dbn:RUTEmis>
+          <!--Optional:-->
+          <dbn:Serie>FA01</dbn:Serie>
+          <!--Optional:-->
+          <dbn:Correlativo>5</dbn:Correlativo>
+          <!--Optional:-->
+          <dbn:RznSocEmis><![CDATA[Cliente Continente]]></dbn:RznSocEmis>
+          <!--Optional:-->
+          <dbn:DirEmis><![CDATA[La Victoria]]></dbn:DirEmis>
+          <!--Optional:-->
+          <dbn:CodiComu>150141</dbn:CodiComu>
+          <!--Optional:-->
+          <dbn:NomComer><![CDATA[Cliente Continente]]></dbn:NomComer>
+          <!--Optional:-->
+          <dbn:RUTRecep>20156879458</dbn:RUTRecep>
+          <!--Optional:-->
+          <dbn:TipoRutReceptor>6</dbn:TipoRutReceptor>
+          <!--Optional:-->
+          <dbn:RznSocRecep><![CDATA[Cliente Continente]]></dbn:RznSocRecep>
+          <!--Optional:-->
+          <dbn:DirRecep><![CDATA[La Victoria]]></dbn:DirRecep>
+          <!--Optional:-->
+          <dbn:TipoMoneda>PEN</dbn:TipoMoneda>
+          <!--Optional:-->
+          <dbn:MntNeto>1.69</dbn:MntNeto>
+          <!--Optional:-->
+          <dbn:MntExe>0.00</dbn:MntExe>
+          <!--Optional:-->
+          <dbn:MntExo>0.00</dbn:MntExo>
+          <!--Optional:-->
+          <dbn:MntTotalIgv>0.31</dbn:MntTotalIgv>
+          <!--Optional:-->
+          <dbn:MntTotal>2</dbn:MntTotal>
+          <!--Optional:-->
+          <dbn:FchEmis>2019-10-17</dbn:FchEmis>
+          <!--Optional:-->
+          <dbn:FechVencFact>2019-11-17</dbn:FechVencFact>
+          <!--Optional:-->
+          <dbn:Sustento>
+          </dbn:Sustento>
+          <!--Optional:-->
+          <dbn:TipoNotaCredito>
+          </dbn:TipoNotaCredito>
+          <!--Optional:-->
+          <dbn:CodigoLocalAnexo>0000</dbn:CodigoLocalAnexo>
+          <dbn:HoraEmision>20:09:35</dbn:HoraEmision>
+        </dbn:camposEncabezado>
+        <!--Optional:-->
+        <dbn:ImptoReten>
+          <!--Zero or more repetitions:-->
+          <dbn:ImptoReten>
+            <!--Optional:-->
+            <dbn:CodigoImpuesto>1000</dbn:CodigoImpuesto>
+            <!--Optional:-->
+            <dbn:TasaImpuesto>18</dbn:TasaImpuesto>
+            <!--Optional:-->
+            <dbn:MontoImpuesto>0.31</dbn:MontoImpuesto>
+          </dbn:ImptoReten>
+        </dbn:ImptoReten>
+      </dbn:Encabezado>
+      <!--Optional:-->
+      <dbn:Detalles>
+        <!--Zero or more repetitions:-->
+        <dbn:Detalle>
+          <!--Optional:-->
+          <dbn:Detalles>
+            <!--PRODUCTO 1:-->
+            <dbn:NroLinDet>1</dbn:NroLinDet>
+            <!--Optional:-->
+            <dbn:QtyItem>1</dbn:QtyItem>
+            <!--Optional:-->
+            <dbn:UnmdItem>NIU</dbn:UnmdItem>
+            <!--Optional:-->
+            <dbn:VlrCodigo>1300</dbn:VlrCodigo>
+            <!--Optional:-->
+            <dbn:NmbItem><![CDATA[[3m] - PRODUCTO DEMO STOCK]]></dbn:NmbItem>
+            <!--Optional:-->
+            <dbn:PrcItem>2</dbn:PrcItem>
+            <!--Optional:-->
+            <dbn:PrcItemSinIgv>1.6949152542372883</dbn:PrcItemSinIgv>
+            <!--Optional:-->
+            <dbn:MontoItem>1.6949152542372883</dbn:MontoItem>
+            <!--Optional:-->
+            <dbn:IndExe>10</dbn:IndExe>
+            <!--Optional:-->
+            <dbn:CodigoTipoIgv>1000</dbn:CodigoTipoIgv>
+            <!--Optional:-->
+            <dbn:TasaIgv>18</dbn:TasaIgv>
+            <!--Optional:-->
+            <dbn:ImpuestoIgv>0.3050847457627117</dbn:ImpuestoIgv>
+          </dbn:Detalles>
+        </dbn:Detalle>
+      </dbn:Detalles>
+      <!--Optional:-->
+      <dbn:DescuentosRecargosyOtros>
+        <dbn:DatosAdicionales>
+          <dbn:DatosAdicionales>
+            <dbn:TipoAdicSunat>01</dbn:TipoAdicSunat>
+            <dbn:NmrLineasAdicSunat>2</dbn:NmrLineasAdicSunat>
+            <dbn:DescripcionAdicsunat><![CDATA[&#13;&#10; - CTA Detración: 24234234234234234 &#13;&#10; - CTA/CTE: 233323]]>.</dbn:DescripcionAdicsunat>
+          </dbn:DatosAdicionales>
+        </dbn:DatosAdicionales>
+      </dbn:DescuentosRecargosyOtros>
+    </dbn:putCustomerETDLoad>
+  </soapenv:Body>
+</soapenv:Envelope>

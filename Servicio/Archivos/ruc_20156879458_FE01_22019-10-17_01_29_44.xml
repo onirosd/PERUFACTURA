@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <putCustomerETDLoadResponse xmlns="http://www.dbnet.cl">
+      <putCustomerETDLoadResult>
+        <Codigo>ERRCD</Codigo>
+        <Mensajes>El RUC 20156879458 del comprobante enviado no pertenece a una de las empresas autorizadas para este servicio.</Mensajes>
+        <TrackId />
+      </putCustomerETDLoadResult>
+    </putCustomerETDLoadResponse>
+  </soap:Body>
+</soap:Envelope>

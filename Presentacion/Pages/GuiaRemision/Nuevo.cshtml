@@ -1,0 +1,253 @@
+﻿@page
+@{
+    ViewData["Title"] = "sds";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="white-box">
+            <div class="alert alert-danger alert-dismissable" id="divMsg" hidden>
+                <button type="button" class="close" onclick="$('#divMsg').hide()" aria-hidden="true">×</button> <ul id="listaMsg"></ul>
+            </div>
+            <div class="row">
+                @*<div class="col-md-2">
+                        <div class="form-group">
+                            <label class="control-label">Comprobante(*)</label>
+                            <select id="cboTipoDocumento" class="form-control select2"></select>
+                        </div>
+                    </div>*@
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="control-label">Cliente<span id="spClienteRequerido">(*)</span></label>
+                        <div class="input-group">
+                            <select id="cboCliente" class="form-control select2"></select>
+                            @*<span class="input-group-btn">
+                                    <button type="button" id="addCliente" data-toggle="modal" data-target="#myModalEditCliente" class="btn waves-effect waves-light btn-primary"><i class="fa fa-plus"></i></button>
+                                </span>*@
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label class="control-label"><span id="spIdentidad">RUC</span> <span id="spRucRequerido">(*)</span></label>
+                        <input type="text" id="txtRuc" class="form-control" placeholder="RUC" disabled>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label class="control-label">Fecha Emisión</label>
+                        <div class="input-group">
+                            <input type="text" id="txtFecha" class="form-control mydatepicker" placeholder="Fecha"> <span class="input-group-addon"><i class="icon-calender"></i></span>
+                        </div>
+                    </div>
+                </div>
+                @*<div class="col-md-2">
+                        <div class="form-group">
+                            <label class="control-label">Estado(*)</label>
+                            <input type="text" id="txtEstado" class="form-control" placeholder="Estado" disabled>
+                        </div>
+                    </div>*@
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label class="control-label">Serie(*)</label>
+                        <select id="cboSerie" class="form-control select2"></select>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label class="control-label">Email<span id="spCorreoRequerido">(*)</span></label>
+                        <input type="text" id="txtEmail" class="form-control" placeholder="Email" disabled>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label class="control-label">Dirección<span id="spDireccionRequerido">(*)</span></label>
+                        <input type="text" id="txtDireccion" class="form-control" placeholder="Dirección" disabled>
+                    </div>
+                </div>
+
+            </div>
+            @*<div class="row">
+                    <div class="col-md-2">
+                        <div class="form-group ultimaFila">
+                            <label class="control-label">Fecha Vencimiento</label>
+                            <div class="input-group">
+                                <input type="text" id="txtFechaVencimiento" class="form-control mydatepicker" placeholder="Fecha"> <span class="input-group-addon"><i class="icon-calender"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label class="control-label">Moneda</label>
+                            <select id="cboMoneda" class="form-control select2"></select>
+                        </div>
+                    </div>
+                    <div class="col-md-2 divTipoCambio">
+                        <div class="form-group ultimaFila">
+                            <label class="control-label">Tipo de Cambio</label>
+                            <input type="number" id="txtTipoCambio" class="form-control" placeholder="Tipo de Cambio" value="1">
+                        </div>
+                    </div>
+                    <div class="col-md-2" id="divTipoOperacion">
+                        <div class="form-group">
+                            <label class="control-label">Tipo Operación(*)</label>
+                            <select id="cboTipoOperacion" class="form-control select2">
+                                <option value="0" selected="selected">Sin Selección</option>
+                                <option value="0101">Venta Interna</option>
+                                <option value="1001">Operación Sujeta a Detracción</option>
+                                <option value="1002">Ventas inafectas a IGV</option>
+                                <option value="1003">ventas exoneradas al IGV</option>
+                                <option value="1004">Ventas Gratuitas</option>
+                                <option value="1005">Ventas por Exportación</option>
+                                <option value="1006">Ventas por Anticipos</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4" id="divDetraccion">
+                        <div class="form-group">
+                            <label class="control-label">Bienes y Servicios sujetos a detracción(*)</label>
+                            <select id="cboDetraccion" class="form-control select2">
+                                <option value="0" selected="selected">Sin Selección</option>
+                                <option value="001">001 - Azúcar y melaza de caña - 10%</option>
+                                <option value="003">003 - Alcohol etílico - 10%</option>
+                                <option value="004">004 - Recursos hidrobiológicos - 4%</option>
+                                <option value="005">005 - Maíz amarillo duro - 4%</option>
+                                <option value="007">007 - Caña de azúcar - 10%</option>
+                                <option value="008">008 - Madera - 4%</option>
+                                <option value="009">009 - Arena y piedra. - 10%</option>
+                                <option value="010">010 - Residuos, subproductos, desechos, recortes y desperdicios - 15%</option>
+                                <option value="011">011 - Bienes gravados con el IGV, o renuncia a la exoneración - (n)%</option>
+                                <option value="012">012 - Intermediación laboral y tercerización - 12%</option>
+                                <option value="013">013 - Animales vivos - (n)%</option>
+                                <option value="014">014 - Carnes y despojos comestibles - 4%</option>
+                                <option value="015">015 - Abonos, cueros y pieles de origen animal - (n)%</option>
+                                <option value="016">016 - Aceite de pescado - (n)%</option>
+                                <option value="017">017 - Harina, polvo y “pellets” de pescado, crustáceos, moluscos y demás invertebrados acuáticos - 4%</option>
+                                <option value="019">019 - Arrendamiento de bienes muebles - 10%</option>
+                                <option value="020">020 - Mantenimiento y reparación de bienes muebles - 12%</option>
+                                <option value="021">021 - Movimiento de carga - 10%</option>
+                                <option value="022">022 - Otros servicios empresariales - 12%</option>
+                                <option value="024">024 - Comisión mercantil - 10%</option>
+                                <option value="025">025 - Fabricación de bienes por encargo - 10%</option>
+                                <option value="026">026 - Servicio de transporte de personas - 10%</option>
+                                <option value="027">027 - Servicio de transporte de carga - 4%</option>
+                                <option value="028">028 - Transporte de pasajeros - (n)%</option>
+                                <option value="030">030 - Contratos de construcción - 4%</option>
+                                <option value="031">031 - Oro gravado con el IGV - 10%</option>
+                                <option value="034">034 - Minerales metálicos no auríferos - 10%</option>
+                                <option value="035">035 - Bienes exonerados del IGV - 1.5%</option>
+                                <option value="036">036 - Oro y demás minerales metálicos exonerados del IGV - 1.5%</option>
+                                <option value="037">037 - Demás servicios gravados con el IGV - 12%</option>
+                                <option value="039">039 - Minerales no metálicos - 10%</option>
+                                <option value="040">040 - Bien inmueble gravado con IGV - 4%</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label class="control-label">Nro OC</label>
+                            <input type="text" id="txtNroOC" class="form-control" placeholder="Nro OC" maxlength="20">
+                        </div>
+                    </div>
+                </div>*@
+            @*<div class="row">
+                    <div class="col-md-2">
+                        <div class="form-group ultimaFila">
+                            <label>Medio de Pago</label>
+                            <select id="cboMedioPago" class="form-control select2"></select>
+                        </div>
+                    </div>
+                </div>*@
+            @*<div class="well" id="divReferencia" style="background-color:#edf1f5;">
+                    <div class="row">
+                        <div class="col-md-4 col-sm4">
+                            <div class="form-group ultimaFila">
+                                <label class="control-label">Tipo Nota</label>
+                                <select id="cboTipoNota" class="form-control select2">
+                                    <option value="0" selected="selected">Sin Selección</option>
+                                    <option value="01">Anulación de la operación</option>
+                                    <option value="02">Anulación por error en el RUC</option>
+                                    <option value="03">Descuento global</option>
+                                    <option value="04">Devolución total</option>
+                                    <option value="05">Corrección por error en la descripción</option>
+                                    <option value="06">Devolución por ítem</option>
+                                    <option value="07">Descuento por ítem</option>
+                                    <option value="08">Bonificación</option>
+                                    <option value="09">Disminuciónen el valor</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group ultimaFila">
+                                <label class="control-label">Serie Ref.</label>
+                                <input type="text" id="txtSerieRef" class="form-control" placeholder="Serie Referencia">
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group ultimaFila">
+                                <label class="control-label">Correlativo Ref.</label>
+                                <input type="text" id="txtCorrelativoRef" class="form-control" placeholder="Correlativo Ref.">
+                            </div>
+                        </div>
+                    </div>
+                </div>*@
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="white-box" id="divGrilla">
+
+            <div class="table-responsive">
+                <table id="grilla" class="table table-striped m-t-0 m-b-5">
+                    <thead>
+                        <tr>
+                            <th style="width:60%">Item</th>
+                            <th>Cantidad</th>
+                            <th>UND</th>
+                            @*<th class="caberceraPU">P.U(<span class="spMoneda">S/</span>)</th>
+                                <th class="cabeceraPT">P.T(<span class="spMoneda">S/</span>)</th>*@
+                        </tr>
+                    </thead>
+                    @*<tfoot>
+                            <tr>
+                                <td colspan="5">
+                                    <div class="form-group m-b-10">
+                                        <label>Glosa</label>
+                                        <textarea name="Glosa" id="txtGlosa" rows="2" class="form-control" maxlength="200"></textarea>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr id="trSubTotal">
+                                <th colspan="4" style="text-align:right">Sub Total (<span class="spMoneda">S/</span>):</th>
+                                <th><input type="text" id="txtSubTotal" class="form-control input-sm" placeholder="Sub Total" disabled></th>
+                            </tr>
+                            <tr id="trIva">
+                                <th colspan="4" style="text-align:right">
+                                    IGV (%):
+                                    <input type="text" id="txtIva" style="width:54px;margin-left:10px;" class="form-control text-right input-sm required price pull-right" width="50" placeholder="IGV" disabled>
+                                </th>
+                                <th><input type="text" id="txtIvaSubTotal" class="form-control input-sm" placeholder="Sub Total" disabled></th>
+                            </tr>
+                            <tr>
+                                <th colspan="4" style="text-align:right">Total (<span class="spMoneda">S/</span>):</th>
+                                <th><input type="text" id="txtTotal" class="form-control input-sm" placeholder="Total" disabled></th>
+                            </tr>
+                        </tfoot>*@
+                </table>
+            </div>
+            <button type="button" class="btn btn-success waves-effect waves-light" id="btnGuardarGuia">
+                <i class="fa fa-check"></i>
+                <span>Guardar</span>
+            </button>
+        </div>
+    </div>
+</div>
+@*<partial name="../Clientes/_EditCliente.cshtml" />
+    <partial name="../Productos/_EditProducto.cshtml" />
+    <partial name="../Servicios/_EditServicio.cshtml" />*@
+@section Scripts {
+    <script src="~/js/GuiaRemision/Nuevo.js"></script>
+}

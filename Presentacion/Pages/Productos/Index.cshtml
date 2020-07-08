@@ -1,0 +1,75 @@
+﻿@page
+@{
+    ViewData["Title"] = "Mantenimiento / Productos";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="white-box">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group ultimaFila">
+                        <label class="control-label">Nombre</label>
+                        <input type="text" id="txtBuscarNombre" class="form-control" placeholder="Nombre">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group ultimaFila">
+                        <label class="control-label">Marca</label>
+                        <input type="text" id="txtBuscarMarca" class="form-control" placeholder="Marca">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group ultimaFila">
+                        <label></label>
+                        <div class="input-group m-t-5">
+                            <button class="btn btn-info" id="btnBuscar">
+                                <i class="fa fa-search"></i>
+                                <span>Buscar</span>
+                            </button>
+                            <button class="btn btn-danger m-l-10" id="btnNuevo" data-toggle="modal" data-target="#myModalEditProducto">
+                                <i class="fa fa-file-o"></i>
+                                <span>Nuevo</span>
+                            </button>
+                            <button class="btn btn-default m-l-10" id="btnCargaMasiva">
+                                <i class="fa fa-upload"></i>
+                                <span>Carga Masiva</span>
+                            </button>
+                            <input type="file" id="fileExcel" style="display:none" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" >
+    <div class="col-sm-12">
+        <div class="white-box" id="divGrilla">
+            <div class="table-responsive">
+                <table id="grilla" class="table color-bordered-table inverse-bordered-table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Marca</th>
+                            <th>Stock</th>
+                            <th>UDM</th>
+                            <th>P.C</th>
+                            <th>P.V</th>
+                            <th>M.G (%)</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<partial name="_EditProducto.cshtml" />
+<partial name="_Abastecer.cshtml" />
+@section Scripts {
+    <script src="~/js/Producto/Producto.js"></script>
+}
+
+

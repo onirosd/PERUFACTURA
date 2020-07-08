@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <putCustomerETDLoadResponse xmlns="http://www.dbnet.cl">
+      <putCustomerETDLoadResult>
+        <Codigo>Error</Codigo>
+        <Mensajes>Violation of PRIMARY KEY constraint 'dte_envi_pdf_PK'. Cannot insert duplicate key in object 'dbo.dte_envi_pdf_hold'. The duplicate key value is (1, 1, 800000003, 1, esuiteDIGIFLOW). Linea: 400 Prc = inserta_documento</Mensajes>
+        <TrackId />
+      </putCustomerETDLoadResult>
+    </putCustomerETDLoadResponse>
+  </soap:Body>
+</soap:Envelope>

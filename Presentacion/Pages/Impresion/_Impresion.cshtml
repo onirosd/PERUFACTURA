@@ -1,0 +1,54 @@
+﻿<div id="myModalImpresion" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="longmodal" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Impresión</h4>
+            </div>
+            <div class="modal-body" style="vertical-align:baseline; width:800px; height:600px;">
+                <img class="no-print" id="bocetoImpresion" />
+                <div id="containerImpresion">
+                    <div class="margin-leftImpresion marginImpresion no-print"></div>
+                    <div class="margin-rightImpresion marginImpresion no-print"></div>
+                    <div title="Fecha de Emisión" class="absoluteImpresion" id="fecha" style="left:674px;top:200px;"></div>
+                    <div title="Nombre del Cliente" class="absoluteImpresion" id="cliente" style="left:94px;top:159px;"></div>
+                    <div title="Documento del Cliente" class="absoluteImpresion text-rightImpresion" id="ruc" style="left:94px;top:215px;"></div>
+                    <div title="Dirección del Cliente" class="absoluteImpresion" id="direccion" style="left:94px;top:189px;"></div>
+                    <div title="Correlativo del Sistema" class="absoluteImpresion text-rightImpresion" id="serie" style="left:603px;top:53px;"></div>
+                    @*<div title="Sub Total" class="absoluteImpresion text-rightImpresion" id="SubTotal" style="left:440px;top:410px;"></div>*@
+                    <div title="Total a Pagar" class="absoluteImpresion text-rightImpresion" id="total" style="left:540px;top:410px;"></div>
+                    @*<div title="Impuesto Total" class="absoluteImpresion text-rightImpresion" id="IvaTotal" style="left:400px;top:410px;"></div>
+                    <div title="Impuesto" class="absoluteImpresion text-rightImpresion" id="Iva" style="left:285px;top:410px;"></div>*@
+                    <div title="Importe Total en Letras" class="absoluteImpresion" id="TotalLetras" style="left:90px;top:410px;"></div>
+                    <div title="Detalle del Comprobante" style="left:2px;top:250px;" class="absoluteImpresion" id="detalleImpresion">
+                        <div style="width:74px;" class="rowImpresion" id="CantidadProducto">
+					        @*<?php foreach($comprobante->Detalle as $k => $c):?>
+					        	<div><?php echo $c->Cantidad; ?> <?php echo $c->UnidadMedida_id; ?></div>
+					        <?php endforeach;?>*@
+				        </div>
+                        <div style="width:428px;" class="rowImpresion" id="NombreProducto">
+					        @*<?php foreach($comprobante->Detalle as $k => $c):?>
+					        	<div><?php echo $c->ProductoNombre; ?></div>
+					        <?php endforeach;?>*@
+				        </div>
+
+                        <div style="width:107px;" class="rowImpresion" id="PrecioUnitario">
+					        @*<?php foreach($comprobante->Detalle as $k => $c):?>
+						        <div class="text-right"><?php echo number_format($c->PrecioUnitario, 4); ?></div>
+					        <?php endforeach;?>*@
+				        </div>
+                        <div style="width:110px;" class="rowImpresion" id="PrecioCantidad">
+					        @*<?php foreach($comprobante->Detalle as $k => $c):?>
+						        <div class="text-right"><?php echo number_format($c->PrecioUnitario * $c->Cantidad, 4); ?></div>
+					        <?php endforeach;?>*@
+				        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-success waves-effect waves-light" id="btnEjecutaImpresion"><i class="fa fa-print"></i><span>Imprimir</span></button>
+            </div>
+        </div>
+    </div>
+</div>

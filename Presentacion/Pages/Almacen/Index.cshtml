@@ -1,0 +1,68 @@
+﻿@page
+@{
+    ViewData["Title"] = "Almacén";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="white-box">
+            <form class="form-body" onsubmit="return false;">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label class="control-label">Tipo</label>
+                            <select class="form-control" id="cboBuscarTipo"></select>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="form-group">
+                            <label></label>
+                            <div class="input-group m-t-5">
+                                <button class="btn btn-info" id="btnBuscar">
+                                    <i class="fa fa-search"></i>
+                                    <span>Buscar</span>
+                                </button>
+                                <button class="btn btn-info m-l-10" id="btnAjustarStock" data-toggle="modal" data-target="#modalAjustarStock">
+                                    <i class="fa fa-wrench"></i>
+                                    <span>Ajustar Stock</span>
+                                </button>
+                                <button class="btn btn-info m-l-10" id="btnNuevaEntrada" data-toggle="modal" data-target="#modalEntrada">
+                                    <i class="fa fa-file"></i>
+                                    <span>Nueva Entrada</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="white-box" id="divGrilla">
+            <div class="table-responsive">
+                <table id="grilla" class="table color-bordered-table inverse-bordered-table">
+                    <thead>
+                        <tr>
+                            <th>Tipo</th>
+                            <th>Producto</th>
+                            <th>Fecha</th>
+                            <th>CNT</th>
+                            <th>UDM</th>
+                            <th>Usuario</th>
+                            <th>Comprobante</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<partial name="~/Pages/Almacen/_AjustarStock.cshtml" />
+<partial name="~/Pages/Almacen/_Entrada.cshtml" />
+@section Scripts {
+    <script src="~/js/Almacen/Almacen.js"></script>
+}
+

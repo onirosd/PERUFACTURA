@@ -1,0 +1,500 @@
+﻿@page
+@{
+    ViewData["Title"] = "Reportes";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="white-box p-b-0">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label class="control-label">Reporte Actual</label>
+                        <select class="form-control" id="sltReporte">
+                            <optgroup label="Reporte Operaciones">
+                                <option value="8">Reporte de Comprobantes</option>
+                                <option value="9">Reporte de Proformas</option>
+                            </optgroup>
+                            <optgroup label="Reportes por Periodo">
+                                <option value="1">Reporte Venta Diario</option>
+                                <option value="2">Reporte Venta Mensual</option>
+                                <option value="3">Reporte Venta Anual</option>
+                            </optgroup>
+                            <optgroup label="Movimiento de su Negocio">
+                                <option value="5">Top de Clientes</option>
+                                <option value="7">Top de Empleados</option>
+                                <option value="4">Top de Productos</option>
+                            </optgroup>
+                            <!--<optgroup label="Análisis de negocio">
+        <option value="6">Rentabilidad de Producto Trimestral</option>
+    </optgroup>
+        -->
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" id="dvReporte">
+    @*Reporte de comprobantes*@
+    <div class="col-md-12 reportes" id="controlReporteComprobantes">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-md-4">
+
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-default" id="btnExportRptComprobantes">
+                            <i class="fa fa-file-excel-o"></i>
+                            <span>Export a Excel</span>
+                        </button>
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-control" id="cboMonedaRptComprobantes"></select>
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-control" id="cboMesesRptComprobantes"></select>
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-control" id="cboAnioRptComprobantes"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body p-10">
+                <table id="grillaReporteComprobantes" class="table color-bordered-table inverse-bordered-table m-0">
+                    <thead>
+                        <tr>
+                            <th colspan="8" class="p-10 tableGroupHeader">Detallado del Mes - Moneda (<span id="spMonedaReporteMesDetallado"></span>)</th>
+                        </tr>
+                        <tr>
+                            <th>Documento</th>
+                            <th>Serie</th>
+                            <th>Correlativo</th>
+                            <th>NroDocumento</th>
+                            <th>Nombre Cliente</th>
+                            <th>Fec. Emisión</th>
+                            <th>Monto</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    @*Reporte de proformas*@
+    <div class="col-md-12 reportes" id="controlReporteProformas" style="display:none;">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-md-4">
+
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-default" id="btnExportRptProformas">
+                            <i class="fa fa-file-excel-o"></i>
+                            <span>Export a Excel</span>
+                        </button>
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-control" id="cboMonedaRptProformas"></select>
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-control" id="cboMesesRptProformas"></select>
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-control" id="cboAnioRptProformas"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body p-10">
+                <table id="grillaReporteProformas" class="table color-bordered-table inverse-bordered-table m-0">
+                    <thead>
+                        <tr>
+                            <th colspan="6" class="p-10 tableGroupHeader">Detallado del Mes Proforma - Moneda (<span id="spMonedaReporteMesDetalladoProformas"></span>)</th>
+                        </tr>
+                        <tr>
+                            <th>Serie</th>
+                            <th>Correlativo</th>
+                            <th>NroDocumento</th>
+                            <th>Nombre Cliente</th>
+                            <th>Fec. Emisión</th>
+                            <th>Monto</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    @*Reporte diario*@
+    <div class="col-md-12 reportes" id="controlReporteDiario" style="display:none;">
+        <div class="panel panel-default">
+            <div class="panel-heading ">
+                <div class="row">
+                    <div class="col-md-6">
+
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-control" id="cboMonedaRptDiario"></select>
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-control" id="cboMesesRptDiario"></select>
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-control" id="cboAnioRptDiario"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-wrapper collapse in" aria-expanded="true">
+                <ul class="nav customtab nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#tablaReporteVentaDiario" aria-controls="tablaReporteVentaDiario" role="tab" data-toggle="tab" aria-expanded="true"><span class="visible-xs"><i class="ti-home"></i></span><span class="hidden-xs">Tabla</span></a></li>
+                    <li role="presentation" class=""><a href="#graficaReporteVentaDiario" aria-controls="graficaReporteVentaDiario" role="tab" data-toggle="tab" data-rpt="rptVentaDiario" aria-expanded="false"><span class="visible-xs"><i class="ti-user"></i></span> <span class="hidden-xs">Gráfica</span></a></li>
+                </ul>
+                <div class="panel-body p-10">
+                    <div class="tab-content m-t-0">
+                        <div role="tabpanel" class="tab-pane active" id="tablaReporteVentaDiario">
+                            <table id="grillaReporteVentaDiario" class="table color-bordered-table inverse-bordered-table m-0">
+                                <thead>
+                                    <tr>
+                                        <th colspan="6" class="p-10 tableGroupHeader">Reporte Diario - Moneda (<span id="spMonedaReporteDiario"></span>)</th>
+                                    </tr>
+                                    <tr>
+                                        <th></th>
+                                        <th>Boleta</th>
+                                        <th>Factura</th>
+                                        <th>Menudeo</th>
+                                        <th>Ganado</th>
+                                        <th>Vendido</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="graficaReporteVentaDiario">
+                            <ul class="list-inline text-right">
+                                <li>
+                                    <h5><i class="fa fa-circle m-r-5 text-info"></i>Ganado</h5>
+                                </li>
+                                <li>
+                                    <h5><i class="fa fa-circle m-r-5 text-danger"></i>Vendido</h5>
+                                </li>
+                            </ul>
+                            <div id="graficaRptDiario" class="grafico" style="height: 285px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    @*Reporte Mensual*@
+    <div class="col-md-12 reportes" id="controlReporteMensual" style="display:none;">
+        <div class="panel panel-default">
+            <div class="panel-heading ">
+                <div class="row">
+                    <div class="col-md-8">
+
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-control" id="cboMonedaRptMensual"></select>
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-control" id="cboAnioRptMensual"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-wrapper collapse in" aria-expanded="true">
+                <ul class="nav customtab nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#tablaReporteVentaMensual" aria-controls="tablaReporteVentaMensual" role="tab" data-toggle="tab" aria-expanded="true"><span class="visible-xs"><i class="ti-home"></i></span><span class="hidden-xs">Tabla</span></a></li>
+                    <li role="presentation" class=""><a href="#graficaReporteVentaMensual" aria-controls="graficaReporteVentaMensual" role="tab" data-toggle="tab" data-rpt="rptVentaMensual" aria-expanded="false"><span class="visible-xs"><i class="ti-user"></i></span> <span class="hidden-xs">Gráfica</span></a></li>
+                </ul>
+                <div class="panel-body p-10">
+                    <div class="tab-content m-t-0">
+                        <div role="tabpanel" class="tab-pane active" id="tablaReporteVentaMensual">
+                            <table id="grillaReporteVentaMensual" class="table color-bordered-table inverse-bordered-table m-0">
+                                <thead>
+                                    <tr>
+                                        <th colspan="6" class="p-10 tableGroupHeader">Reporte Mensual - Moneda (<span id="spMonedaReporteMensual"></span>)</th>
+                                    </tr>
+                                    <tr>
+                                        <th></th>
+                                        <th>Boleta</th>
+                                        <th>Factura</th>
+                                        <th>Menudeo</th>
+                                        <th>Ganado</th>
+                                        <th>Vendido</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="graficaReporteVentaMensual">
+                            <ul class="list-inline text-right">
+                                <li>
+                                    <h5><i class="fa fa-circle m-r-5 text-info"></i>Ganado</h5>
+                                </li>
+                                <li>
+                                    <h5><i class="fa fa-circle m-r-5 text-danger"></i>Vendido</h5>
+                                </li>
+                            </ul>
+                            <div id="graficaRptMensual" style="height: 285px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    @*Reporte Anual*@
+    <div class="col-md-12 reportes" id="controlReporteAnual" style="display:none;">
+        <div class="panel panel-default">
+            <div class="panel-heading ">
+                <div class="row">
+                    <div class="col-md-10">
+
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-control" id="cboMonedaRptAnual"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-wrapper collapse in" aria-expanded="true">
+                <ul class="nav customtab nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#tablaReporteVentaAnual" aria-controls="tablaReporteVentaMensual" role="tab" data-toggle="tab" aria-expanded="true"><span class="visible-xs"><i class="ti-home"></i></span><span class="hidden-xs">Tabla</span></a></li>
+                    <li role="presentation" class=""><a href="#graficaReporteVentaAnual" aria-controls="graficaReporteVentaMensual" role="tab" data-toggle="tab" data-rpt="rptVentaAnual" aria-expanded="false"><span class="visible-xs"><i class="ti-user"></i></span> <span class="hidden-xs">Gráfica</span></a></li>
+                </ul>
+                <div class="panel-body p-10">
+                    <div class="tab-content m-t-0">
+                        <div role="tabpanel" class="tab-pane active" id="tablaReporteVentaMensual">
+                            <table id="grillaReporteVentaAnual" class="table color-bordered-table inverse-bordered-table m-0">
+                                <thead>
+                                    <tr>
+                                        <th colspan="6" class="p-10 tableGroupHeader">Reporte Anual - Moneda (<span id="spMonedaReporteAnual"></span>)</th>
+                                    </tr>
+                                    <tr>
+                                        <th></th>
+                                        <th>Boleta</th>
+                                        <th>Factura</th>
+                                        <th>Menudeo</th>
+                                        <th>Ganado</th>
+                                        <th>Vendido</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="graficaReporteVentaAnual">
+                            <ul class="list-inline text-right">
+                                <li>
+                                    <h5><i class="fa fa-circle m-r-5 text-info"></i>Ganado</h5>
+                                </li>
+                                <li>
+                                    <h5><i class="fa fa-circle m-r-5 text-danger"></i>Vendido</h5>
+                                </li>
+                            </ul>
+                            <div id="graficaRptAnual" style="height: 285px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    @*Top Clientes*@
+    <div class="col-md-12 reportes" id="controlReporteTopClientes" style="display:none;">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-md-6">
+
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-control" id="cboMonedaRptTopClientes"></select>
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-control" id="cboMesesRptTopClientes"></select>
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-control" id="cboAnioRptTopClientes"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body p-10">
+                <div class="table-responsive">
+                    <table id="grillaReporteTopClientes" class="table color-bordered-table inverse-bordered-table m-0">
+                        <thead>
+                            <tr>
+                                <th colspan="4" class="p-10 tableGroupHeader">Top de Clientes - Moneda (<span id="spMonedaReporteTopClientes"></span>)</th>
+                            </tr>
+                            <tr>
+                                <th>Descripción</th>
+                                <th>N de Veces</th>
+                                <th>Ganado</th>
+                                <th>Vendido</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*Top Empleados*@
+    <div class="col-md-12 reportes" id="controlReporteTopEmpleados" style="display:none;">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-md-6">
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-control" id="cboMonedaRptTopEmpleados"></select>
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-control" id="cboMesesRptTopEmpleados"></select>
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-control" id="cboAnioRptTopEmpleados"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body p-10">
+                <div class="table-responsive">
+                    <table id="grillaReporteTopEmpleados" class="table color-bordered-table inverse-bordered-table m-0">
+                        <thead>
+                            <tr>
+                                <th colspan="4" class="p-10 tableGroupHeader">Top Empleados - Moneda (<span id="spMonedaReporteTopEmpleados"></span>)</th>
+                            </tr>
+                            <tr>
+                                <th>Descripción</th>
+                                <th>N de Ventas</th>
+                                <th>Ganado</th>
+                                <th>Vendido</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*Top Productos*@
+    <div class="col-md-12 reportes" id="controlReporteTopProductos" style="display:none;">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-md-6">
+
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-control" id="cboMonedaRptTopProductos"></select>
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-control" id="cboMesesRptTopProductos"></select>
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-control" id="cboAnioRptTopProductos"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body p-10">
+                <div class="table-responsive">
+                    <table id="grillaReporteTopProductos" class="table color-bordered-table inverse-bordered-table m-0">
+                        <thead>
+                            <tr>
+                                <th colspan="4" class="p-10 tableGroupHeader">Top Empleados - Moneda (<span id="spMonedaReporteTopProductos"></span>)</th>
+                            </tr>
+                            <tr>
+                                <th>Descripción</th>
+                                <th>Cantidades</th>
+                                <th>Ganado</th>
+                                <th>Vendido</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*Top Producto Trimestral*@
+    <div class="col-md-12 reportes" id="controlReporteProductoTrimestral" style="display:none;">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-md-4">
+
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-default">
+                            <i class="fa fa-file-excel-o"></i>
+                            <span>Export a Excel</span>
+                        </button>
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-control" id="cboMonedaRptTrimestral">
+                            <option>S/</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-control" id="cboMesesRptTrimestral">
+                            <option>Octubre</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-control" id="cboAnioRptTrimestral">
+                            <option>2019</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table id="grillaReporteTrimestral" class="table color-bordered-table inverse-bordered-table">
+                        <thead>
+                            <tr>
+                                <th colspan="8" class="p-10 tableGroupHeader">Detallado del Mes Trimestral - Moneda <span id="spMonedaTrimestral"></span></th>
+                            </tr>
+                            <tr>
+                                <th>Documento</th>
+                                <th>Serie</th>
+                                <th>Correlativo</th>
+                                <th>NroDocumento</th>
+                                <th>Nombre Cliente</th>
+                                <th>Fec. Emisión</th>
+                                <th>Monto</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</div>
+@section Scripts {
+    <script src="~/js/Reportes/Reportes.js"></script>
+}

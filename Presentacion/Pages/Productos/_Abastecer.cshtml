@@ -1,0 +1,74 @@
+﻿<div id="myModalAbastecer" class="modal fade long-modal" tabindex="-1" role="dialog" aria-labelledby="longmodal" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Entrada / Salida</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" id="formularioEntrada" onsubmit="return false;">
+                    <div class="form-group">
+                        <label for="txtNombreProdAbastecer" class="control-label col-sm-3">Producto:</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="txtNombreProdAbastecer" disabled maxlength="100">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtCantidadAbastecer" class="control-label col-sm-3">Cantidad (*):</label>
+                        <div class="col-sm-9">
+                            <input type="number" class="form-control" id="txtCantidadAbastecer" placeholder="Ingrese la cantidad a registrar para esta entrada." 
+                                   oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                   maxlength="8">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtPrecioCompraAbastecer" class="control-label col-sm-3">Precio Compra(*):</label>
+                        <div class="col-sm-9">
+                            <input type="number" class="form-control" id="txtPrecioCompraAbastecer" placeholder="Ingrese el precio de compra del Producto." 
+                                   oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                   maxlength="8">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="ddlUDMEdit" class="control-label col-sm-3">UDM:</label>
+                        <div class="col-sm-9">
+                            <select class="form-control" id="ddlUDMAbastecer" disabled>
+                                <option value="NIU">UNI</option>
+                                <option value="GLL">GL</option>
+                                <option value="ZZ">SS</option>
+                                <option value="KGM">KG</option>
+                                <option value="CS">CS</option>
+                                <option value="BX">BX</option>
+                                <option value="BG">BG</option>
+                                <option value="P1">P1</option>
+                                <option value="VI">VI</option>
+                                <option value="BK">BK </option>
+                                <option value="U2">U2 </option>
+                                <option value="LTR">LT </option>
+                                <option value="PK">PK </option>
+                                <option value="C62">C62</option>
+                                <option value="DZN">DZ </option>
+                                <option value="TB">TB </option>
+                                <option value="1G">1G </option>
+                                <option value="EV">EV </option>
+                                <option value="MIL">MIL</option>
+                                <option value="PC">PC </option>
+                                <option value="MTR">MTR</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtStockActualAbastecer" class="control-label col-sm-3">Stock Actual:</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="txtStockActualAbastecer" disabled>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger waves-effect waves-light" id="btnGuardarAbastecer">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>

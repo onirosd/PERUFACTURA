@@ -1,0 +1,92 @@
+﻿@page
+@{
+    ViewData["Title"] = "Proformas";
+}
+<div class="row">
+    <div class="col-md-12">
+        <div class="white-box">
+            <div class="row">
+                <div class="col-md-1">
+                    <div class="form-group ultimaFila">
+                        <label class="control-label">Nro</label>
+                        <input type="text" id="txtBuscarNro" class="form-control" placeholder="Nro">
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group ultimaFila">
+                        <label class="control-label">Cliente</label>
+                        <input type="text" id="txtBuscarCliente" class="form-control" placeholder="Cliente">
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group ultimaFila">
+                        <label class="control-label">Usuario</label>
+                        <input type="text" id="txtBuscarUsuario" class="form-control" placeholder="Usuario">
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group ultimaFila">
+                        <label class="control-label">Creado</label>
+                        <div class="input-group">
+                            <input type="text" id="txtBuscarFecha" class="form-control input-daterange-datepicker" placeholder="Fecha"> <span class="input-group-addon"><i class="icon-calender"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group ultimaFila">
+                        <label class="control-label">Estado</label>
+                        <select class="form-control" id="cboEstado">
+                            <option value="0">Todos</option>
+                            <option value="1">Creado</option>
+                            <option value="2">Cerrado</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group ultimaFila">
+                        <label></label>
+                        <div class="input-group m-t-5">
+                            <button class="btn btn-info" id="btnBuscar">
+                                <i class="fa fa-search"></i>
+                                <span>Buscar</span>
+                            </button>
+                            <button class="btn btn-danger m-l-5" id="btnNuevo">
+                                <i class="fa fa-file-o"></i>
+                                <span>Nuevo</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="white-box" id="divGrilla">
+            <div class="table-responsive">
+                <table id="grilla" class="table color-bordered-table inverse-bordered-table">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nro</th>
+                            <th>Cliente</th>
+                            <th>Usuario</th>
+                            <th>Creado</th>
+                            <th>Estado</th>
+                            <th>Total</th>
+                            <th>Ver</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<partial name="../Impresion/_impresion.cshtml" />
+@section Scripts {
+    <script src="~/js/Proforma/Proforma.js"></script>
+    <script src="~/js/Impresion/Impresion.js"></script>
+    <script src="~/plugin/jquery-ui-1.9.2.custom.js"></script>
+}

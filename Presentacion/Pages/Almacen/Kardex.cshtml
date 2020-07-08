@@ -1,0 +1,93 @@
+﻿@page
+@{
+    ViewData["Title"] = "Kardex";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="white-box">
+            <form class="form-body" onsubmit="return false;">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label class="control-label">Reporte Actual</label>
+                            <select class="form-control" id="cboTipoFecha">
+                                <option value="1">Una Fecha Determinada</option>
+                                <option value="2">Un Rango de Fechas</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-2" id="divFecha">
+                        <div class="form-group">
+                            <label class="control-label">&nbsp;</label>
+                            <div class="input-group">
+                                <input type="text" id="txtBuscarFecha" class="form-control mydatepicker" placeholder="Fecha"> <span class="input-group-addon"><i class="icon-calender"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3" id="divRangoFechas">
+                        <div class="form-group">
+                            <label class="control-label">&nbsp;</label>
+                            <div class="input-group">
+                                <input type="text" id="txtBuscarRangoFecha" class="form-control input-daterange-datepicker" placeholder="Fecha"> <span class="input-group-addon"><i class="icon-calender"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label class="control-label">&nbsp;</label>
+                            <div class="input-group">
+                                <button class="btn btn-info" id="btnBuscarReporte">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="white-box" id="divGrilla">
+            <div class="table-responsive">
+                <table id="grilla" class="table color-bordered-table inverse-bordered-table table-no-border">
+                    <thead>
+                        <tr>
+                            <th class="bg-none"></th>
+                            <th class="bg-group-header border-top-left-radius" colspan="2">Entradas</th>
+                            <th class="bg-group-header border-top-right-radius" colspan="2">Salidas</th>
+                            <th class="bg-none"></th>
+                            <th class="bg-none"></th>
+                        </tr>
+                        <tr>
+                            <th>Item</th>
+                            <th>Cantidad</th>
+                            <th>Compra</th>
+                            <th>Cantidad</th>
+                            <th>Venta</th>
+                            <th>Stock</th>
+                            <th>Destino</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                    <tfoot id="footerTotales" hidden>
+                        <tr>
+                            <th class="bg-none"></th>
+                            <th class="bg-none"></th>
+                            <th class="bg-totalEntrada"></th>
+                            <th class="bg-none"></th>
+                            <th class="bg-totalSalida"></th>
+                            <th class="bg-none"></th>
+                            <th class="bg-none"></th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script src="~/js/Almacen/Kardex.js"></script>
+}
